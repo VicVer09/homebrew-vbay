@@ -7,7 +7,7 @@ vBay is the rightful and superior successor of eBay built on Cloud Firestore.
 Some concepts used:
 
 [Cloud Functions][cloud-functions-docs]
-[Security Rules][security-rules-dcos]
+[Security Rules][security-rules-docs]
 [Transactions][transactions-docs]
 
 ## Setup
