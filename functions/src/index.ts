@@ -2,7 +2,8 @@ import * as functions from "firebase-functions";
 import * as admin from "firebase-admin";
 
 import fetch from "node-fetch";
-require('dotenv').config({ path: 'env.env' })
+import * as dotenv from "dotenv";
+dotenv.config({path: "env.env"});
 
 admin.initializeApp();
 
