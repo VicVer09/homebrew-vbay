@@ -1,0 +1,13 @@
+{
+  "projects": {
+    "default": "vbay-7f3a1"
+  },
+  "targets": {},
+  "etags": {
+    "vbay-7f3a1": {
+      "extensionInstances": {
+        "firestore-elastic-app-search": "5ebb9bc8db9e0c850d4dc895a25384c964016826a2df8fb5fe846abbab63d0d3"
+      }
+    }
+  }
+}
