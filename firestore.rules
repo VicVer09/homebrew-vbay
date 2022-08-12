@@ -1,0 +1,29 @@
+rules_version = '2';
+service cloud.firestore {
+  //firebase deploy --only firestore:rules firebase deploy --only firestore:rules
+  match /databases/{database}/documents {
+    function hasAllAndOnly(fields) {
+      let onlyKeys = request.resource.data.keys().hasOnly(fields);
+      let allKeys = request.resource.data.keys().hasAll(fields);
+      return onlyKeys && allKeys;
+    }
+    function userIsValid(){
+      let fields = ['username', 'yearOfBirth'];
+      let validUsername = request.resource.data.username != "";
+      return hasAllAndOnly(fields) && validUsername
+    }
+    match /users/{user} {
+      allow read: if true;
+      allow write: if userIsValid();
+    }
+    function itemIsValid(){
+      let fields = ['title', 'category', 'description', 'seller', 'highestBid', 'sellTimestamp'];
+      let validTitle = request.resource.data.title != "";
+      return hasAllAndOnly(fields) && validTitle
+    }
+    match /items/{item} {
+      allow read: if true;
+      allow create: if itemIsValid();
+    }
+  }
+}

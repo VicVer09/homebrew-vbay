@@ -1,0 +1,39 @@
+{
+  "dependencies": {
+    "@elastic/elasticsearch": "^8.2.1",
+    "chalk": "^4.1.2",
+    "clear": "^0.1.0",
+    "commander": "^9.4.0",
+    "dotenv": "^16.0.1",
+    "figlet": "^1.5.2",
+    "firebase": "^9.9.1",
+    "firebase-admin": "^11.0.1",
+    "inquirer": "^8.2.4",
+    "node-fetch": "^2.6.1",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "@types/node": "^18.6.5",
+    "@types/node-fetch": "^2.6.2",
+    "@typescript-eslint/eslint-plugin": "^5.33.0",
+    "@typescript-eslint/parser": "^5.33.0",
+    "eslint": "^8.9.0",
+    "nodemon": "^2.0.19",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.0.0",
+    "typescript": "^4.7.4"
+  },
+  "main": "./lib/index.js",
+  "bin": {
+    "vbay": "./lib/index.js"
+  },
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "start": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
+    "start:windows": "nodemon --watch 'src/**/*.ts' --exec \"npx ts-node\" src/client.ts",
+    "create": "npm run build && npm run test",
+    "build": "tsc -p .",
+    "local": "sudo npm i -g && vbay",
+    "refresh": "rm -rf ./node_modules ./package-lock.json && npm install"
+  }
+}
