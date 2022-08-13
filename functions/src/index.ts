@@ -2,8 +2,6 @@ import * as functions from "firebase-functions";
 import * as admin from "firebase-admin";
 
 import fetch from "node-fetch";
-import * as dotenv from "dotenv";
-dotenv.config({path: "env.env"});
 
 admin.initializeApp();
 
@@ -194,7 +192,7 @@ export const searchItems = functions.https.onRequest(async (request, response) =
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${process.env.SEARCHKEY}`,
+        "Authorization": "Bearer xxx",
       },
       body: JSON.stringify({
         "query": queryString,

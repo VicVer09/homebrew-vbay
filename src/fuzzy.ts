@@ -4,7 +4,7 @@ import { User, ItemMessage } from "src/types";
 import { addUser } from "src/handlers";
 import * as constants from "src/constants";
 
-const dictionary = require("data/random.json");
+const dictionary = require("src/random.json");
 
 const randInt = (n: number): number => Math.floor(Math.random() * n)
 const randIntStr = (n: number): string => randInt(n).toString();

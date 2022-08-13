@@ -42,10 +42,10 @@ const refreshScreen = () => {
       figlet.textSync('vbay', { horizontalLayout: 'full' })
     ),
   );
-  console.log("*** DEBUG STATE ***")
-  console.log(process.env)
-  console.log(state)
-  console.log("*** DEBUG STATE ***")
+  // console.log("*** DEBUG STATE ***")
+  // console.log(process.env)
+  // console.log(state)
+  // console.log("*** DEBUG STATE ***")
   console.log(state.consoleMessage);
   state.consoleMessage = ''
 }
@@ -328,7 +328,7 @@ const promptBidOnItem = async () => await inquirer.prompt(
       }
     ]).then(async (answers) => {
       state.level = Levels.Item
-      handlers.submitBid(state.selectedItem.id, answers.bid, state.username).then(async (response) => {
+      await handlers.submitBid(state.selectedItem.id, answers.bid, state.username).then(async (response) => {
         state.selectedItem = await handlers.getItem(db, state.selectedItem.id)
         state.consoleMessage = (await response.text()) + '\n' + itemToLongText(state.selectedItem)
       }).catch((error) => {
