@@ -1,4 +1,4 @@
-class vBay < Formula
+class Vbay < Formula
   desc "A simple shopping site"
   homepage "https://github.com/VicVer09/homebrew-vbay"
   url "https://github.com/VicVer09/homebrew-vbay/releases/download/v0.0.1/vbay-macos-x64.tar.gz"
