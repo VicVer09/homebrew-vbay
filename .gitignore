@@ -67,3 +67,4 @@ env.env
 
 release/
 lib/
+admin_key.json
